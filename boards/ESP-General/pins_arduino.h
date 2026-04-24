@@ -23,10 +23,11 @@ static const uint8_t RX = 44;
 static const uint8_t SDA = 8;
 static const uint8_t SCL = 9;
 
-// SPI shared bus (dipakai semua modul)
-static const uint8_t MOSI = 11;
-static const uint8_t MISO = 13;
-static const uint8_t SCK  = 12;
+// SPI shared bus (dipakai semua modul) → rename biar nggak bentrok
+static const uint8_t SPI_MOSI = 11;
+static const uint8_t SPI_MISO = 13;
+static const uint8_t SPI_SCK  = 12;
+static const uint8_t SPI_SS   = 10;
 
 // --- TFT ST7735 128x160 ---
 #define ST7735_DRIVER 1
@@ -36,29 +37,29 @@ static const uint8_t SCK  = 12;
 #define TFT_DC   4
 #define TFT_RST  2
 #define TFT_BL   21
-#define TFT_MOSI MOSI
-#define TFT_SCLK SCK
-#define TFT_MISO MISO
+#define TFT_MOSI SPI_MOSI
+#define TFT_SCLK SPI_SCK
+#define TFT_MISO SPI_MISO
 
 // --- SDCard ---
 #define SDCARD_CS   13
-#define SDCARD_MOSI MOSI
-#define SDCARD_SCK  SCK
-#define SDCARD_MISO MISO
+#define SDCARD_MOSI SPI_MOSI
+#define SDCARD_SCK  SPI_SCK
+#define SDCARD_MISO SPI_MISO
 
 // --- CC1101 ---
-#define CC1101_SS_PIN   10
+#define CC1101_SS_PIN   SPI_SS
 #define CC1101_GDO0_PIN 9
-#define CC1101_MOSI_PIN MOSI
-#define CC1101_SCK_PIN  SCK
-#define CC1101_MISO_PIN MISO
+#define CC1101_MOSI_PIN SPI_MOSI
+#define CC1101_SCK_PIN  SPI_SCK
+#define CC1101_MISO_PIN SPI_MISO
 
 // --- nRF24 ---
 #define NRF24_SS_PIN   7
 #define NRF24_CE_PIN   6
-#define NRF24_MOSI_PIN MOSI
-#define NRF24_SCK_PIN  SCK
-#define NRF24_MISO_PIN MISO
+#define NRF24_MOSI_PIN SPI_MOSI
+#define NRF24_SCK_PIN  SPI_SCK
+#define NRF24_MISO_PIN SPI_MISO
 
 // --- Tombol fisik ---
 #define BTN_PREV 34   // GPIO untuk tombol Prev
